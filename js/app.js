@@ -70,8 +70,44 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
                         $scope.outStatus = status;
                     });
         }
-        else
-            $scope.outData = "Bumm.. failed :("
+        else if($scope.selectedReq.req === 'POST'){
+            $http({method: 'POST', url: $scope.finalUrl}).
+                    success(function(data, status) {
+                        console.log(data); 
+                        $scope.outData = data;
+                        $scope.outStatus = status;
+                    }).
+                    error(function(data, status) {
+                        $scope.outData = data || "Request failed";
+                        $scope.outStatus = status;
+                    });
+        }
+        else if($scope.selectedReq.req === 'PUT'){
+            $http({method: 'PUT', url: $scope.finalUrl}).
+                    success(function(data, status) {
+                        console.log(data); 
+                        $scope.outData = data;
+                        $scope.outStatus = status;
+                    }).
+                    error(function(data, status) {
+                        $scope.outData = data || "Request failed";
+                        $scope.outStatus = status;
+                    });
+        }else if($scope.selectedReq.req === 'DELETE'){
+            $http({method: 'DELETE', url: $scope.finalUrl}).
+                    success(function(data, status) {
+                        console.log(data); 
+                        $scope.outData = data;
+                        $scope.outStatus = status;
+                    }).
+                    error(function(data, status) {
+                        $scope.outData = data || "Request failed";
+                        $scope.outStatus = status;
+                    });
+        }
+        else{
+            $scope.outStatus = "Bumm.. Select a method!";
+        }
     };
 }]);
 
@@ -79,7 +115,7 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
 restApp.directive('demoDisplay', function($compile) {
   return {
     scope: {
-      demoDisplay: "=", 
+      demoDisplay: "=", //import referenced model to our directives scope
       demoDays: "="
     },
     template: "<div class='input_params'><input class='form-control' ng-model = 'demoDisplay.key' ng-click = 'addParams()' placeholder='Key'><input class='form-control' ng-model = 'demoDisplay.value' placeholder='Value'>"
