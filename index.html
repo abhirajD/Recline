@@ -4,33 +4,52 @@
 
     <head>
         <title>Recline: REST Client</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="js/angular.min.js"></script>
         <script src="js/app.js"></script>
+        <script src="js/tidy_options.js"></script>
+        <script src="js/tidy.js"></script>
+        <link rel="stylesheet" href="css/popup.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     
     <body ng-app="restApp">
         
         <div ng-controller="Ctrl">
-            <div>
-                REST Method:
-                <select ng-model="selectedReq" ng-options="x.req for x in restMethod">
-                </select>
-                <p>
-                <input ng-model = "url">
-                <button ng-click = "addParams()">+</button>
-                
-                <div ng-repeat="field in param.fields">
-                  <div demo-display="field"></div>
+            <div class = "input_div">
+                <span class = "input_ctrl">
+                    <select class="form-control" ng-init="selectedReq = restMethod[0]" ng-model="selectedReq" ng-options="x.req for x in restMethod">
+                    </select>
+                </span>
+                <span class = "input_ctrl">
+                    <input class="form-control" ng-model = "url" placeholder="www.google.com">
+                </span>
+                <span class = "input_ctrl">
+                    <button class="btn btn-default btn-block" ng-click = "addParams()">+</button>
+                </span>
+                <span class = "input_ctrl">
+                    <button class="btn btn-default btn-block" ng-click = "send()">SEND {{send}}</button>
+                </span>
+                <div class="input_params_div">
+                    <div ng-repeat="field in param.fields">
+                      <div demo-display="field"></div>
+                    </div>
                 </div>
-                <p></p>
+                <hr>
+<!--                <tt>{{param.fields}}</tt>-->
+<!--                <p>You selected: {{selectedReq.req}}</p>-->
+                <div class= "out_finalurl">
+                    <b>URL :</b>
+                    <a ng-href="{{makeUrl()}}" > {{makeUrl()}}</a>
+                </div>
+                <hr>
+                <div class= "out_finalurl">
+                    <b>Status :</b>
+                    <a ng-bind="outStatus" ></a>
+                </div>
+                <div class= "out_data">
+                    <textarea class="form-control" rows="8" placeholder="REST API Response" ng-bind="outData"></textarea>
+                </div>
                 
-                
-                <tt>{{param.fields}}</tt>
-                <h1>You selected: {{selectedReq.req}}</h1>
-                <a ng-href="{{makeUrl()}}">{{makeUrl()}}</a>
-                
-                <button ng-click = "send()">SEND</button>
                 
             </div>
         </div>

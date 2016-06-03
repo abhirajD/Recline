@@ -1,6 +1,6 @@
 var restApp = angular.module('restApp', []);
 
-restApp.controller('Ctrl', function($scope) {
+restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
     
     $scope.restMethod = [
         {req : "GET"},
@@ -9,7 +9,7 @@ restApp.controller('Ctrl', function($scope) {
         {req : "DELETE"}
     ];
     
-    $scope.url = "Enter URL Here";
+    $scope.url = "";
     $scope.finalUrl = "";
     
     var counter = 0;
@@ -37,25 +37,37 @@ restApp.controller('Ctrl', function($scope) {
             };
         });
         
-        if($scope.urlParams)
-            $scope.finalUrl = $scope.url +'?' + $scope.urlParams.substring(1);
+        if($scope.urlParams){
+            $scope.finalUrl = 'http://'+$scope.url +'?' + $scope.urlParams.substring(1);
             return $scope.finalUrl;
-        else
-            $scope.finalUrl = $scope.url;
-            return $scope.finalUrl;
+        }
+        else{
+            httphead = "http://";
+            if($scope.url.indexOf(httphead) == -1){
+                $scope.finalUrl = 'http://'+$scope.url;
+                return $scope.finalUrl;
+            }
+            else{
+                $scope.finalUrl = $scope.url;
+                return $scope.finalUrl;
+            }
+        }
     };
+    $scope.outStatus = "-";
     
-    
-    
-});
+    $scope.send = function() {
+        @scope.outData="Tada";
+    };
+}]);
 
 
 restApp.directive('demoDisplay', function($compile) {
   return {
     scope: {
-      demoDisplay: "=", //import referenced model to our directives scope
+      demoDisplay: "=", 
       demoDays: "="
     },
-    template: "<input ng-model = 'demoDisplay.key' ng-click = 'addParams()'><input ng-model = 'demoDisplay.value'>"
+    template: "<div class='input_params'><input class='form-control' ng-model = 'demoDisplay.key' ng-click = 'addParams()' placeholder='Key'><input class='form-control' ng-model = 'demoDisplay.value' placeholder='Value'>"
   }
 })
+
