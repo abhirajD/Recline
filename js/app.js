@@ -15,8 +15,6 @@ restApp.controller('Ctrl', function($scope) {
     $scope.param = {
     fields: []
     }
-    $scope.days = ['Day', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    
     $scope.addParams = function(){
         $scope.param.fields.push({
             name: "Param" + counter++
