@@ -56,7 +56,22 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
     $scope.outStatus = "-";
     
     $scope.send = function() {
-        @scope.outData="Tada";
+        if($scope.selectedReq.req === 'GET'){
+            $http({method: 'GET', url: $scope.finalUrl}).
+                    success(function(data, status) {
+                        console.log(data); 
+                        $scope.outData = data;
+                        $scope.outStatus = status;
+                
+                        $scope.outData = tidy_html5($scope.outData, options);
+                    }).
+                    error(function(data, status) {
+                        $scope.outData = data || "Request failed";
+                        $scope.outStatus = status;
+                    });
+        }
+        else
+            $scope.outData = "Bumm.. failed :("
     };
 }]);
 

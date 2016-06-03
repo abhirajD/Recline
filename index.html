@@ -12,7 +12,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     
-    <body ng-app="restApp">
+    <body ng-app="restApp" >
+        <nav class="navbar navbar-default navbar-pattern">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand">RECLINE</a>
+            </div>
+          </div>
+        </nav>
         
         <div ng-controller="Ctrl">
             <div class = "input_div">
@@ -39,12 +46,12 @@
 <!--                <p>You selected: {{selectedReq.req}}</p>-->
                 <div class= "out_finalurl">
                     <b>URL :</b>
-                    <a ng-href="{{makeUrl()}}" > {{makeUrl()}}</a>
+                    <a ng-href="{{makeUrl()}}" style="color:black"> {{makeUrl()}}</a>
                 </div>
                 <hr>
                 <div class= "out_finalurl">
                     <b>Status :</b>
-                    <a ng-bind="outStatus" ></a>
+                    <a ng-bind="outStatus" style="color:black"></a>
                 </div>
                 <div class= "out_data">
                     <textarea class="form-control" rows="8" placeholder="REST API Response" ng-bind="outData"></textarea>
