@@ -28,7 +28,10 @@
                 
                 <tt>{{param.fields}}</tt>
                 <h1>You selected: {{selectedReq.req}}</h1>
-
+                <a ng-href="{{makeUrl()}}">{{makeUrl()}}</a>
+                
+                <button ng-click = "send()">SEND</button>
+                
             </div>
         </div>
         
