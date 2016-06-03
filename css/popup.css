@@ -1,0 +1,101 @@
+.input_ctrl{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.input_div{
+    width: 400px;
+    height: 340px;
+    text-align:center;
+}
+
+.input_params .form-control{
+    display:inline;
+    width: 120px;
+    border-top: 0 !important;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    border-color: lightgray;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    height:25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.input_param .form-control:active{
+    border-color: #009997;
+}
+
+.form-control:focus{
+    border-color: #009997 !important;
+}
+
+.btn:hover, .btn:active, .btn:visited, .btn:focus{
+    border-color: #009997 !important;
+    background-color: white !important;
+    outline-color: #009997 !important;
+}
+.input_params_div{
+    
+}
+
+.out_finalurl{
+    text-align: left;
+    width: inherit;
+    word-wrap: break-word;
+    color: #009997;
+    margin-top: 20px;
+    margin-left: 10px;
+    
+}
+
+.out_data{
+    ma
+}
+
+.navbar-default {
+    color: #FFFFFF !important;
+    background-color: #009997 !important;
+    text-align: center !important;
+}
+.navbar-brand {
+    color:white !important;
+    font-size: 30px !important;
+    text-align: center !important;
+    font-family: "Courier New" !important;
+}
+
+.navbar-pattern {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 400px;
+  height: 50px;
+  border: none;
+  font: normal 0.5px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(135deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), -webkit-linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(0, 153, 151);
+  background: -moz-linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), -moz-linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(0, 153, 151);
+  background: linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), rgb(0, 153, 151);
+  background-position: auto auto;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 200em 200em;
+  background-size: 200em 200em;
+}
+
+.gradient-pattern {
+    background-image: url(../images/bg.png);
+
+}
+
+
+
+
