@@ -59,11 +59,11 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
         if($scope.selectedReq.req === 'GET'){
             $http({method: 'GET', url: $scope.finalUrl}).
                     success(function(data, status) {
-                        console.log(data); 
-                        $scope.outData = data;
+                        // console.log(data); 
                         $scope.outStatus = status;
-                
+                        $scope.outData = JSON.stringify(data, null, "    ");
                         $scope.outData = tidy_html5($scope.outData, options);
+                        
                     }).
                     error(function(data, status) {
                         $scope.outData = data || "Request failed";
@@ -73,9 +73,10 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
         else if($scope.selectedReq.req === 'POST'){
             $http({method: 'POST', url: $scope.finalUrl}).
                     success(function(data, status) {
-                        console.log(data); 
-                        $scope.outData = data;
+                        // console.log(data); 
                         $scope.outStatus = status;
+                        $scope.outData = JSON.stringify(data, null, "    ");
+                        $scope.outData = tidy_html5($scope.outData, options);
                     }).
                     error(function(data, status) {
                         $scope.outData = data || "Request failed";
@@ -85,9 +86,10 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
         else if($scope.selectedReq.req === 'PUT'){
             $http({method: 'PUT', url: $scope.finalUrl}).
                     success(function(data, status) {
-                        console.log(data); 
-                        $scope.outData = data;
+                        // console.log(data); 
                         $scope.outStatus = status;
+                        $scope.outData = JSON.stringify(data, null, "    ");
+                        $scope.outData = tidy_html5($scope.outData, options);
                     }).
                     error(function(data, status) {
                         $scope.outData = data || "Request failed";
@@ -96,9 +98,10 @@ restApp.controller('Ctrl', ['$scope','$http',function($scope,$http) {
         }else if($scope.selectedReq.req === 'DELETE'){
             $http({method: 'DELETE', url: $scope.finalUrl}).
                     success(function(data, status) {
-                        console.log(data); 
-                        $scope.outData = data;
+                        // console.log(data); 
                         $scope.outStatus = status;
+                        $scope.outData = JSON.stringify(data, null, "    ");
+                        $scope.outData = tidy_html5($scope.outData, options);
                     }).
                     error(function(data, status) {
                         $scope.outData = data || "Request failed";

@@ -5,13 +5,13 @@ options = {
   "markup":true,
   "output-xml":false,
   "numeric-entities":true,
-  "quote-marks":true,
+  "quote-marks":false,
   "quote-nbsp":false,
   "show-body-only":true,
   "quote-ampersand":false,
   "break-before-br":true,
-  "uppercase-tags":false,
+  "uppercase-tags":true,
   "uppercase-attributes":false,
-  "drop-font-tags":true,
+  "drop-font-tags":false,
   "tidy-mark":false
 }
