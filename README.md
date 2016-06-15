@@ -5,12 +5,18 @@ Recline is a minimal `Rest client`. It supports:
   - POST
   - PUT
   - DELETE  
-**Tools Used**
+
+
+**Tools Used**  
+
 `Angular.JS` is used to make REST calls.  
 `Bootstrap` is used to style form elements.  
 `node.JS` was used as backen for initial testing.  
 `Tidy_Html` is used to clean the HTML response recieved(It has some issues with displaying tidy_html in div, will fix it asap EDIT: Fixed). The page doesnt tidy any JSON (EDIT: Tidies JSON now) or XML or any other response formats.    
+
+
 **How to use:**  
+
 RECLINE is a chrome extension. Follow the below steps to add it to chrome.  
 Download `Recline.crx` from `/build/`. Add it to chrome.  
 OR  
